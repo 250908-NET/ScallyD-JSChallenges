@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 7</title>
+
+    <script>
+      window.addEventListener("DOMContentLoaded", () => {
+        document
+          .querySelector("#squareButton")
+          .addEventListener("click", (evt) => {
+            const number = document.querySelector("#number").value;
+            alert(`The square is ${number**2}.`);
+          });
+      });
+    </script>
+  </head>
+  <body>
+    <form>
+      <label>Enter a number: <input type="number" id="number" /></label>
+      <button type="button" id="squareButton">Square the number</button>
+    </form>
+  </body>
+</html>
