@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 13</title>
+
+    <script>
+      function changeStyle() {
+        document.querySelector("#para").style.color = "#bf0000";
+        document.querySelector("#para").style.fontWeight = "bold";
+      }
+      function resetStyle() {
+        document.querySelector("#para").style.removeProperty("color");
+        document.querySelector("#para").style.removeProperty("font-weight");
+      }
+
+      document.addEventListener("DOMContentLoaded", (evt) => {
+        document
+          .querySelector("#colorButton")
+          .addEventListener("click", changeStyle);
+        document
+          .querySelector("#resetButton")
+          .addEventListener("click", resetStyle);
+      });
+    </script>
+  </head>
+  <body>
+    <p id="para"
+      >Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sunt molestiae
+      ducimus sed, rem hic iste natus tempora debitis necessitatibus nobis
+      dolores quidem voluptas rerum asperiores eligendi dolore delectus. Id,
+      natus!</p
+    >
+    <div
+      ><button type="button" id="colorButton">Change color</button>
+      <button type="button" id="resetButton">Reset</button>
+    </div>
+  </body>
+</html>
