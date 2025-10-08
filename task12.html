@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 12</title>
+
+    <script>
+      window.addEventListener("DOMContentLoaded", (evt) => {
+        document.querySelector("#button").addEventListener("click", (evt) => {
+          document.querySelector("#heading").textContent =
+            "You clicked the button!";
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <h1 id="heading">Task 12</h1>
+    <button type="button" id="button">This is a button</button>
+  </body>
+</html>
