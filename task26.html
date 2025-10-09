@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 23</title>
+
+    <script>
+      function getPost() {
+        const id = document.querySelector("#postId").value;
+
+        fetch(`https://jsonplaceholder.typicode.com/posts/${id}`)
+          .then((response) => {
+            if (!response.ok) throw new Error("Network response was not OK.");
+            return response.json();
+          })
+          .then((post) => {
+            const postElt = document.createElement("div");
+            const postTitleElt = document.createElement("h2");
+            const postBodyElt = document.createElement("p");
+            postTitleElt.textContent = post.title;
+            postBodyElt.textContent = post.body;
+            postElt.append(postTitleElt, postBodyElt);
+
+            document.body.append(postElt);
+          })
+          .catch((error) => console.error("Fetch error:", error));
+      }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        document.querySelector("#fetchBtn").addEventListener("click", getPost);
+      });
+    </script>
+  </head>
+  <body>
+    <h1>Task 26</h1>
+    <input id="postId" type="number" />
+    <button id="fetchBtn" type="button">Fetch Post</button>
+  </body>
+</html>
